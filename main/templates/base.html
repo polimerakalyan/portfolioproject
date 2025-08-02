@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom Styling -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .nav-link {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+    .footer {
+      background-color: #212529;
+      color: #adb5bd;
+      padding: 40px 0;
+    }
+    .footer a {
+      color: #adb5bd;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: #ffffff;
+    }
+    .social-icons a {
+      font-size: 1.2rem;
+      margin-right: 15px;
+      color: #adb5bd;
+    }
+    .social-icons a:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="/">MyPortfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<main class="container my-5">
+  {% block content %}
+  {% endblock %}
+</main>
+
+<!-- Footer -->
+<footer class="footer mt-auto">
+  <div class="container text-center text-md-start">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5 class="text-white">About Me</h5>
+        <p>I am a Django developer passionate about building professional web applications that solve real-world problems.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="text-white">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="">About</a></li>
+          <li><a href="">Projects</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5 class="text-white">Connect With Me</h5>
+        <div class="social-icons">
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="small mt-3">&copy; {{ year|default:"2025" }} MyPortfolio. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+</body>
+</html>

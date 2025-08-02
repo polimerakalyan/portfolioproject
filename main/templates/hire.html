@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}Resume - Gokulapati Rakesh{% endblock %}
+{% block content %}
+
+<section class="py-5 bg-light">
+  <div class="container" data-aos="fade-up">
+    <div class="text-center mb-4">
+      <h1 class="fw-bold">Gokulapati Rakesh</h1>
+      <p class="text-muted">Software Developer</p>
+      <p>
+        <a href="mailto:gokulapatirakesh9@gmail.com" class="me-3"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://gokulapati.github.io/Portfolio/" target="_blank" class="me-3"><i class="fas fa-globe"></i> Portfolio</a>
+        <span><i class="fas fa-phone"></i> 8297495657</span>
+      </p>
+    </div>
+
+    <!-- Summary -->
+    <div class="mb-5">
+      <h3 class="mb-3">Summary</h3>
+      <p class="text-muted">Results-driven Python Developer with 3 years of professional experience in backend development using Python and Django. Proven expertise in building scalable web applications, developing secure RESTful APIs, integrating cloud services, and implementing microservices architecture. Adept at driving operational efficiency through automation, CI/CD pipelines, and optimizing application performance. Collaborative team player with a strong focus on problem-solving and delivering high-quality solutions.</p>
+    </div>
+
+    <!-- Experience -->
+    <div class="mb-5">
+      <h3 class="mb-3">Work Experience</h3>
+      <h5 class="fw-bold">Software Developer</h5>
+      <p class="text-muted">DevelopTrees IT Solutions, Guntur</p>
+      <ul>
+        <li>Developed and maintained web applications with responsive design.</li>
+        <li>Built scalable backend services using Python and Django.</li>
+        <li>Designed and implemented secure RESTful APIs.</li>
+        <li>Conducted UX analysis leading to a 20% increase in engagement.</li>
+        <li>Architected microservices for better modularity and scalability.</li>
+        <li>Integrated authentication systems and optimized backend workflows.</li>
+        <li>Automated testing and CI/CD processes for faster deployments.</li>
+      </ul>
+    </div>
+
+    <!-- Education -->
+    <div class="mb-5">
+      <h3 class="mb-3">Education</h3>
+      <p><strong>Bachelor of Computer Science</strong> – Kalinga University, Raipur (2019–2022)</p>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="mb-5">
+      <h3 class="mb-3">Technical Skills</h3>
+      <ul class="list-unstyled">
+        <li><strong>Languages:</strong> Python, Django</li>
+        <li><strong>Web Development:</strong> HTML, CSS, Bootstrap</li>
+        <li><strong>Back-end:</strong> RESTful APIs, Performance Optimization, Microservices</li>
+        <li><strong>Version Control:</strong> Git</li>
+        <li><strong>Databases:</strong> PostgreSQL, MySQL</li>
+        <li><strong>Tools:</strong> VS Code, CI/CD, Docker, Kubernetes</li>
+      </ul>
+    </div>
+
+    <!-- Projects -->
+    <div class="mb-5">
+      <h3 class="mb-3">Projects</h3>
+
+      <h5 class="fw-bold">Bug Legal (HRMS Portal)</h5>
+      <p>Developed an HRMS platform with centralized employee data, automated HR tasks, and microservice-based architecture using Django and REST APIs. Integrated secure authentication, deployed on AWS, and implemented CI/CD pipelines.</p>
+
+      <h5 class="fw-bold">LMS (Learning Management System)</h5>
+      <p>Designed a modular LMS with features like student tracking, live exams, and RESTful integration. Deployed on AWS using Docker and Kubernetes for high availability and scalability.</p>
+    </div>
+
+    <!-- Declaration -->
+    <div>
+      <h3 class="mb-3">Declaration</h3>
+      <p>I hereby declare that the above information is true and correct to the best of my knowledge and belief.</p>
+      <p class="text-muted">Place: Hyderabad<br>Date: {{ today|default:"August 1, 2025" }}<br><strong>Gokulapati Rakesh</strong></p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
