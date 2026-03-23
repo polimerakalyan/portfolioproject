@@ -1,260 +1,403 @@
-{% extends 'base.html' %}
-{% block title %}Home{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polimera Kalyan | DevOps Engineer</title>
 
-{% block content %}
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Hero Section -->
-  <div class="container position-relative z-2 text-center text-md-start">
-    <div class="row align-items-center">
-      <div class="col-md-7" data-aos="fade-right">
-        <h1 class="display-4 fw-bold mb-3">Hi, I'm <span class="text-warning">Gokulapati Rakesh</span> 👋</h1>
-        <p class="lead mb-4"><span id="typing" class="text-info fw-semibold"></span></p>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4f46e5',
+            secondary: '#9333ea'
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,0.08)',
+            glass: '0 8px 32px rgba(31,38,135,0.15)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    .skill-chip {
+      padding: 0.6rem 1.4rem;
+      border-radius: 9999px;
+      background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+      color: #111827;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .skill-chip:hover {
+      background: linear-gradient(to right, #111827, #000);
+      color: white;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+    }
+
+    .project-chip {
+      padding: 0.4rem 0.9rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+<!-- NAVBAR -->
+<header class="fixed w-full bg-white/80 backdrop-blur-lg border-b z-50">
+  <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-extrabold text-primary">
+      Polimera Kalyan<span class="text-secondary">.</span>
+    </h1>
+    <ul class="hidden md:flex space-x-10 text-sm font-semibold">
+      <li><a href="#home" class="hover:text-primary">Home</a></li>
+      <li><a href="#about" class="hover:text-primary">About</a></li>
+      <li><a href="#experience" class="hover:text-primary">Experience</a></li>
+      <li><a href="#skills" class="hover:text-primary">Skills</a></li>
+      <li><a href="#projects" class="hover:text-primary">Projects</a></li>
+      <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section id="home" class="pt-36 pb-28 bg-gradient-to-br from-primary via-indigo-600 to-secondary text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+
+    <div>
+      <span class="inline-block mb-4 px-4 py-1 rounded-full bg-white/20 text-sm">
+        DevOps Engineer
+      </span>
+
+      <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+        Automating & Scaling<br/>
+        <span class="text-indigo-200">Cloud Infrastructure</span>
+      </h2>
+
+      <p class="text-lg text-indigo-100 mb-10 max-w-xl">
+        4+ years of experience in cloud infrastructure automation,
+        CI/CD pipelines, container orchestration, and production reliability.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-6">
+      <div class="bg-white/15 p-6 rounded-2xl text-center shadow-glass">
+        <h3 class="text-3xl font-bold">4+</h3>
+        <p class="text-sm mt-2">Years Experience</p>
+      </div>
+      <div class="bg-white/15 p-6 rounded-2xl text-center shadow-glass">
+        <h3 class="text-3xl font-bold">15+</h3>
+        <p class="text-sm mt-2">Deployments</p>
+      </div>
+      <div class="bg-white/15 p-6 rounded-2xl text-center shadow-glass">
+        <h3 class="text-3xl font-bold">10+</h3>
+        <p class="text-sm mt-2">AWS Services</p>
+      </div>
+      <div class="bg-white/15 p-6 rounded-2xl text-center shadow-glass">
+        <h3 class="text-3xl font-bold">99.9%</h3>
+        <p class="text-sm mt-2">Reliability</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14">
+
+    <div class="bg-white shadow-soft p-10 rounded-3xl">
+      <h4 class="text-2xl font-bold mb-6">DevOps Engineer</h4>
+      <p class="text-slate-600 mb-4">
+        Results-driven DevOps Engineer with strong experience in
+        automating cloud infrastructure and delivering reliable CI/CD pipelines.
+      </p>
+      <p class="text-slate-600 mb-4">
+        Hands-on expertise in AWS, Docker, Kubernetes, Linux,
+        Infrastructure as Code, and monitoring tools.
+      </p>
+      <p class="text-slate-600">
+        Focused on improving deployment speed, scalability,
+        system reliability, and security through DevOps best practices.
+      </p>
+    </div>
+
+    <div class="grid gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-soft">☁️ Cloud Infrastructure</div>
+      <div class="bg-white p-6 rounded-2xl shadow-soft">🚀 CI/CD Automation</div>
+      <div class="bg-white p-6 rounded-2xl shadow-soft">📦 Container Orchestration</div>
+      <div class="bg-white p-6 rounded-2xl shadow-soft">📊 Monitoring & Reliability</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="py-28 bg-gradient-to-b from-slate-100 to-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h3 class="text-4xl font-bold text-slate-900">Experience</h3>
+      <p class="mt-4 text-slate-600 text-lg">
+        Professional DevOps & Cloud experience
+      </p>
+    </div>
+
+    <!-- Experience Card -->
+    <div class="relative bg-white rounded-3xl shadow-lg p-10
+                hover:shadow-2xl transition duration-300">
+
+      <!-- Timeline Line -->
+      <span class="absolute left-0 top-10 h-24 w-1 bg-primary rounded-full"></span>
+
+      <div class="pl-6">
+        <!-- Role -->
+        <h4 class="text-2xl font-bold text-slate-900">
+          DevOps Engineer
+        </h4>
+        <p class="text-slate-500 mb-8">
+          GLOBUS INFO SERVICES · <span class="font-medium">4+ Years</span>
+        </p>
+
+        <!-- Responsibilities -->
+        <ul class="space-y-4 text-slate-600">
+
+          <li class="flex gap-4">
+            <span class="mt-1 text-primary">✔</span>
+            Designed and implemented CI/CD pipelines using Jenkins and AWS CodePipeline
+            to automate builds, tests, and deployments.
+          </li>
+
+          <li class="flex gap-4">
+            <span class="mt-1 text-primary">✔</span>
+            Managed source code repositories using GitHub and Azure Repos
+            with proper branching and review strategies.
+          </li>
+
+          <li class="flex gap-4">
+            <span class="mt-1 text-primary">✔</span>
+            Provisioned and maintained AWS infrastructure including EC2, VPC,
+            S3, and IAM following security best practices.
+          </li>
+
+          <li class="flex gap-4">
+            <span class="mt-1 text-primary">✔</span>
+            Containerized applications using Docker and deployed them
+            on Kubernetes clusters with rolling updates.
+          </li>
+
+          <li class="flex gap-4">
+            <span class="mt-1 text-primary">✔</span>
+            Implemented monitoring and alerting using CloudWatch,
+            Prometheus, and Grafana.
+          </li>
+
+          <li class="flex gap-4">
+            <span class="mt-1 text-primary">✔</span>
+            Improved deployment reliability, reduced downtime,
+            and enhanced release cycles through automation.
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="py-28 bg-gradient-to-b from-gray-50 to-white">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <h3 class="text-4xl font-bold mb-4">Technical Skills</h3>
+    <p class="text-gray-600 mb-14 text-lg">
+      Tools & technologies I work with
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-5">
+      <span class="skill-chip">AWS</span>
+      <span class="skill-chip">Azure</span>
+      <span class="skill-chip">Linux</span>
+      <span class="skill-chip">Docker</span>
+      <span class="skill-chip">Kubernetes</span>
+      <span class="skill-chip">Jenkins</span>
+      <span class="skill-chip">GitHub Actions</span>
+      <span class="skill-chip">Terraform</span>
+      <span class="skill-chip">CI/CD</span>
+      <span class="skill-chip">Azure Pipelines</span>
+      <span class="skill-chip">CloudWatch</span>
+      <span class="skill-chip">Prometheus</span>
+      <span class="skill-chip">Grafana</span>
+      <span class="skill-chip">SonarQube</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-28 bg-slate-100">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <h3 class="text-4xl font-bold">Projects</h3>
+      <p class="mt-4 text-slate-600 text-lg">
+        Real-world DevOps implementations
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-xl transition flex flex-col justify-between">
+
+  <!-- Content -->
+  <div>
+    <h4 class="text-xl font-semibold mb-3">
+      CI/CD Pipeline Automation
+    </h4>
+
+    <p class="text-slate-600 mb-6">
+      Automated build, test, and deployment workflows for applications
+      using industry-standard DevOps practices.
+    </p>
+
+    <div class="flex flex-wrap gap-2 mb-8">
+      <span class="project-chip">Jenkins</span>
+      <span class="project-chip">GitHub</span>
+      <span class="project-chip">AWS</span>
+      <span class="project-chip">CI/CD</span>
+    </div>
+  </div>
+
+  <!-- View Button -->
+  <div>
+    <a
+      href="./cicd/index.html"
+      class="inline-block px-6 py-3 text-sm font-medium text-white bg-slate-900 rounded-xl
+             hover:bg-slate-800 transition"
+    >
+      View Details
+    </a>
+  </div>
+
+</div>
+
+
+      <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-xl transition">
+        <h4 class="text-xl font-bold mb-3">Docker & Kubernetes</h4>
+        <p class="text-slate-600 mb-6">
+          Containerized and deployed microservices with auto-scaling.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="project-chip">Docker</span>
+          <span class="project-chip">Kubernetes</span>
+          <span class="project-chip">EKS</span>
+        </div>
         <div>
-          
-          <a href="{% url 'hireme' %}" class="btn btn-light btn-lg text-dark">
-            <i class="fas fa-envelope me-2"></i> Hire Me
-          </a>
-        </div>
-      </div>
-    </div>
+    <a
+      href="/projects/cicd-pipeline.html"
+      class="inline-block px-6 py-3 text-sm font-medium text-white bg-slate-900 rounded-xl
+             hover:bg-slate-800 transition"
+    >
+      View Details
+    </a>
   </div>
-</section>
-
-<!-- About Me -->
-<section class="py-5">
-  <div class="container" data-aos="fade-up">
-    <div class="row align-items-center">
-      <div class="col-md-12"></div>
-      <div class="col-md-12">
-        <h2>About Me</h2>
-        <p class="text-muted">I am a Bachelor of Science in Computer Science graduate with a solid foundation in Python Full Stack Development. I specialize in building responsive, dynamic, and scalable web applications using modern technologies such as Python, Django, Django REST Framework (DRF), React.js, HTML5, CSS3, Bootstrap, and MySQL.
-
-
-
-Backend Development: Python, Django, RESTful APIs, Authentication (JWT)
-
-Frontend Development: React.js, HTML5, CSS3, Bootstrap, Responsive Design
-
-Database Management: MySQL, PostgreSQL
-
-Version Control: Git, GitHub
-
-Deployment & Testing: Basic Docker, Unit Testing, Postman, CI/CD fundamentals
-
-During my academic and project experience, I have developed end-to-end full stack applications, handled API integrations, and implemented user authentication systems. I am passionate about solving complex problems, optimizing backend processes, and crafting seamless user experiences.
-
-I am a fast learner, adaptive, and thrive in collaborative Agile environments. I am actively seeking Python Full Stack Developer roles where I can work with experienced teams, contribute to impactful projects, and grow as a developer in line with industry best practices.</p>
-        <ul class="list-unstyled">
-          <li><i class="fas fa-check-circle text-success me-2"></i> Designed and deployed scalable microservices</li>
-          <li><i class="fas fa-check-circle text-success me-2"></i> CI/CD automation with GitHub Actions and Jenkins</li>
-          <li><i class="fas fa-check-circle text-success me-2"></i> Follow Agile/Scrum methodology in real-time teams</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills -->
-<section class="bg-light py-5">
-  <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-5 fw-bold">Skills</h2>
-    <div class="row g-3 justify-content-center text-center">
-      <div class="col-6 col-md-3">
-        <div class="card shadow-sm p-3">
-          <i class="fas fa-code fa-2x text-primary mb-2"></i>
-          <h6 class="fw-semibold">Python</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="card shadow-sm p-3">
-          <i class="fab fa-python fa-2x text-warning mb-2"></i>
-          <h6 class="fw-semibold">Django</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="card shadow-sm p-3">
-          <i class="fas fa-link fa-2x text-success mb-2"></i>
-          <h6 class="fw-semibold">Django REST Framework</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="card shadow-sm p-3">
-          <i class="fas fa-database fa-2x text-info mb-2"></i>
-          <h6 class="fw-semibold">PostgreSQL / MySQL</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="card shadow-sm p-3">
-          <i class="fab fa-git-alt fa-2x text-danger mb-2"></i>
-          <h6 class="fw-semibold">Git & GitHub</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="card shadow-sm p-3">
-          <i class="fab fa-html5 fa-2x text-danger mb-2"></i>
-          <h6 class="fw-semibold">HTML5 / CSS3</h6>
-        </div>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="card shadow-sm p-3">
-          <i class="fab fa-js-square fa-2x text-warning mb-2"></i>
-          <h6 class="fw-semibold">JavaScript / Bootstrap</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section class="py-5">
-  <div class="container" data-aos="fade-up">
-    <h2 class="mb-4">Projects</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">HRMS Portal</h5>
-            <p class="card-text">Role-based dashboard for HR, Admin, and Employees with leave tracking, payroll, and login.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Learning Management System</h5>
-            <p class="card-text">Courses, lessons, quizzes with instructor/admin panel and video hosting using Django.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Job Portal</h5>
-            <p class="card-text">Search jobs, apply, resume parsing, and admin dashboard. Built with DRF and PostgreSQL.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Experience -->
-<section class="bg-light py-5">
-  <div class="container" data-aos="fade-up">
-    <h2 class="mb-4">Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h5><strong>Developtrees Refaining IT solutions</strong><br>Software Developer</h5>
-        <p class="text-muted">2022 – 2025</p>
-        <ul>
-            <li>Worked on Django-based projects.</li>
-<li>Developed and maintained web applications.</li>
-<li>Used MySQL with XAMPP for database management.</li>
-<li>Collaborated on software development tasks.</li>
-        </ul>
       </div>
       
+
+      <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-xl transition">
+        <h4 class="text-xl font-bold mb-3">AWS Infrastructure</h4>
+        <p class="text-slate-600 mb-6">
+          Designed secure and scalable AWS cloud architecture.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <span class="project-chip">EC2</span>
+          <span class="project-chip">VPC</span>
+          <span class="project-chip">IAM</span>
+          <span class="project-chip">CloudWatch</span>
+        </div>
+        <div>
+    <a
+      href="/projects/cicd-pipeline.html"
+      class="inline-block px-6 py-3 text-sm font-medium text-white bg-slate-900 rounded-xl
+             hover:bg-slate-800 transition"
+    >
+      View Details
+    </a>
+  </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- Education -->
-<section class="py-5">
-  <div class="container" data-aos="fade-up">
-    <h2 class="mb-4">Education</h2>
-    <p><strong>Bachelor of Science in Computer Science</strong> – Kalinga University, Raipur(2019-2022)</p>
-  </div>
-</section>
-<style>
-    footer {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+<!-- CONTACT -->
+<section id="contact" class="py-28 bg-gradient-to-br from-primary to-secondary text-white">
+  <div class="max-w-5xl mx-auto px-6 text-center">
 
-footer a:hover {
-  text-decoration: underline;
-}
+    <!-- Heading -->
+    <h3 class="text-4xl font-bold mb-4">
+      Let’s Work Together
+    </h3>
+    <p class="text-indigo-100 text-lg mb-14">
+      Open to DevOps Engineer & Cloud Engineer opportunities
+    </p>
 
-.social-icons a {
-  transition: color 0.3s ease;
-}
+    <!-- Contact Card -->
+    <div class="bg-white/15 backdrop-blur-xl rounded-3xl p-10 shadow-glass
+                hover:shadow-2xl transition duration-300">
 
-.social-icons a:hover {
-  color: #00d1b2; /* teal/green hover */
-}
+      <p class="text-lg mb-8 text-indigo-100">
+        Feel free to reach out for collaborations, roles, or DevOps discussions.
+      </p>
 
-</style>
-<!-- Contact -->
-<!-- Footer Section -->
-<!-- Footer -->
-<!-- Contact Section -->
-<section class="bg-white text-dark py-5 border-top">
-  <div class="container">
-    <div class="row">
+      <!-- Buttons -->
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
 
-      <!-- Contact Form -->
-      <div class="col-md-7 mb-4">
-        <h4 class="mb-3">Get in touch</h4>
-        <form>
-          <div class="row mb-3">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Your name">
-            </div>
-            <div class="col">
-              <input type="email" class="form-control" placeholder="Your email address">
-            </div>
-          </div>
-          <div class="mb-3">
-            <textarea class="form-control" rows="5" placeholder="Your message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send message</button>
-          <p class="small text-muted mt-2">I’ll respond as soon as possible (max. 72 hours)</p>
-        </form>
-      </div>
+        <a href="mailto:kalyankalyanpolimera@gmail.com"
+           class="px-8 py-4 rounded-full bg-white text-primary font-semibold
+                  hover:bg-indigo-100 transition">
+          📧 Email Me
+        </a>
 
-      <!-- Side Info -->
-      <div class="col-md-5">
-        <h6><strong>What about pricing?</strong></h6>
-        <p>I don’t have fixed prices. It depends on project needs and scope. I’ll share an estimate after discussing the specs with you.</p>
-        
-        <h6><strong>Availability?</strong></h6>
-        <p>I’m currently available. You can connect via email or LinkedIn.</p>
+        <a href="https://www.linkedin.com/in/polimera-kalyan"
+           target="_blank"
+           class="px-8 py-4 rounded-full border border-white/40 font-semibold
+                  hover:bg-white hover:text-primary transition">
+          🔗 LinkedIn Profile
+        </a>
+
       </div>
     </div>
+
   </div>
 </section>
-<!-- Typing animation JS -->
-<script>
-  const textArray = [
-    "Software Engineer at Developtrees Refaining IT solutions ",
-    "Django Backend Developer",
-    "Cloud Enthusiast – AWS & Docker",
-    "Microservices & REST APIs"
-  ];
-  let i = 0, j = 0, currentText = '', isDeleting = false;
 
-  (function typeEffect() {
-    const typing = document.getElementById("typing");
-    if (!typing) return;
 
-    currentText = textArray[i];
+<footer class="bg-slate-900 text-white py-6 text-center text-sm">
+  © 2025 Polimera Kalyan · DevOps Engineer
+</footer>
 
-    if (isDeleting) {
-      typing.textContent = currentText.substring(0, j--);
-    } else {
-      typing.textContent = currentText.substring(0, j++);
-    }
-
-    if (!isDeleting && j === currentText.length + 1) {
-      isDeleting = true;
-      setTimeout(typeEffect, 1000);
-    } else if (isDeleting && j === 0) {
-      isDeleting = false;
-      i = (i + 1) % textArray.length;
-      setTimeout(typeEffect, 500);
-    } else {
-      setTimeout(typeEffect, isDeleting ? 50 : 100);
-    }
-  })();
-</script>
-
-{% endblock %}
+</body>
+</html>
